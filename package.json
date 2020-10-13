@@ -6,6 +6,9 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [ "lib", "es", "dist", "README.md" ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.11.6",
