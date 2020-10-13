@@ -1,14 +1,47 @@
 {
-  "name": "update-dotenv",
-  "version": "1.1.1",
-  "description": "Write updates to a .env file",
-  "main": "index.js",
+  "name": "@growflow/update-dotenv",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [ "lib", "es", "dist", "README.md" ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.10.4",
+    "@babel/runtime": "^7.9.2",
+    "babel-jest": "^26.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "jest": "^26.1.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "dotenv": "*"
+  },
   "scripts": {
-    "test": "jest && standard"
+    "build": "rimraf dist es lib && tsc -p tsconfig.output.json --noEmit false --emitDeclarationOnly && cross-env BABEL_ENV=es babel src -d es --extensions \".ts\" --source-maps && cross-env BABEL_ENV=node babel src -d lib --extensions \".ts\" --source-maps",
+    "publish": "yarn publish --non-interactive || exit 0",
+    "lint": "tsc && eslint --ext .js,.jsx,.ts,.tsx src",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bkeepers/update-dotenv.git"
+    "url": "git+https://github.com/GrowflowTeam/update-dotenv.git"
   },
   "keywords": [
     "dotenv"
@@ -16,20 +49,7 @@
   "author": "Brandon Keepers <bkeepers@github.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bkeepers/update-dotenv/issues"
+    "url": "https://github.com/GrowflowTeam/update-dotenv/issues"
   },
-  "homepage": "https://github.com/bkeepers/update-dotenv#readme",
-  "devDependencies": {
-    "dotenv": "^6.0.0",
-    "jest": "^23.5.0",
-    "standard": "^11.0.1"
-  },
-  "peerDependencies": {
-    "dotenv": "*"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
-  }
+  "homepage": "https://github.com/GrowflowTeam/update-dotenv#readme"
 }

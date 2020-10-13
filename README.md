@@ -5,17 +5,17 @@
 ## Installation
 
 ```
-npm install dotenv update-dotenv
+yarn add dotenv @growflow/update-dotenv
 ```
 
 ## Usage
 
 ```js
-const updateDotenv = require('update-dotenv')
+const updateDotenv = require('@growflow/update-dotenv')
 
 updateDotenv({
   MY_VARIABLE: 'new value'
-}).then((newEnv) => console.log('Done!', newEnv))
+}, <optional_environment_name>).then((newEnv) => console.log('Done!', newEnv))
 ```
 
 ## License
