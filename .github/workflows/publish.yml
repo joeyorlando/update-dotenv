@@ -1,0 +1,30 @@
+
+name: publish
+
+on:
+  workflow_run:
+    workflows: ["Build and Test"]
+    branches: ["master"]
+    types: 
+      - completed
+
+jobs:
+   publish:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: update_dotenv_build_artifacts    
+      - run: yarn publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
