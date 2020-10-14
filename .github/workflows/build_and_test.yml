@@ -20,6 +20,8 @@ jobs:
         run: |
           yarn install
           yarn jest
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  
    build:
     runs-on: ubuntu-latest
 
@@ -36,6 +38,8 @@ jobs:
         run: |
           yarn install
           yarn build
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}      
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
