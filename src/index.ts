@@ -1,14 +1,19 @@
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
+import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
-import { promisify } from 'util';
 
-const escapeNewlines = (str: string) => {
-  return str.replace(/\n/g, '\\n');
+const escape = (str: string) => {
+  let result = str.replace(/\n/g, '\\n');
+
+  if (result.includes(' ') || result.includes('\t')) {
+    result = `"${result.replace('"', '\\"')}"`;
+  }
+
+  return result;
 };
 
 const format = (key: string, value: string) => {
-  return `${key}=${escapeNewlines(value)}`;
+  return `${key}=${escape(value)}`;
 };
 
 export interface EnvironmentConfig {
@@ -23,9 +28,7 @@ const updateDotenv = async (config: EnvironmentConfig, env?: Env) => {
 
   // Merge with existing values
   try {
-    const existing = dotenv.parse(
-      await promisify(fs.readFile)(filepath, 'utf-8')
-    );
+    const existing = dotenv.parse(await readFile(filepath, 'utf-8'));
     config = Object.assign(existing, config);
   } catch (err) {
     if (err.code !== 'ENOENT') {
@@ -36,7 +39,7 @@ const updateDotenv = async (config: EnvironmentConfig, env?: Env) => {
   const contents = Object.keys(config)
     .map((key) => format(key, config[key]))
     .join('\n');
-  await promisify(fs.writeFile)(filepath, contents);
+  await writeFile(filepath, contents);
 
   // Update current env with new values
   Object.assign(process.env, config);

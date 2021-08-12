@@ -35,6 +35,12 @@ describe('update-dotenv', () => {
       await updateDotenv({ SECOND: 'bar' });
       expect(fs.readFileSync('.env', 'utf-8')).toEqual('FIRST=foo\nSECOND=bar');
     });
+
+    it('deals with spaces in values', async () => {
+      await updateDotenv({ FIRST: 'what kind of psychopath puts spaces in an environment variable?' });
+      await updateDotenv({ SECOND: 'bar' });
+      expect(fs.readFileSync('.env', 'utf-8')).toEqual('FIRST="what kind of psychopath puts spaces in an environment variable?"\nSECOND=bar');
+    });
   });
 
   describe('environment was passed', () => {
