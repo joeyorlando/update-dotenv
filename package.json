@@ -3,12 +3,10 @@
   "prettier": "@growflow/prettier-config",
   "version": "1.0.1",
   "main": "lib/index.js",
-  "module": "es/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "lib",
-    "es",
     "dist",
     "README.md"
   ],
@@ -45,7 +43,7 @@
     "dotenv": "*"
   },
   "scripts": {
-    "build": "rimraf dist es lib && tsc -p tsconfig.output.json --noEmit false --emitDeclarationOnly && cross-env BABEL_ENV=es babel src -d es --extensions \".ts\" --source-maps && cross-env BABEL_ENV=node babel src -d lib --extensions \".ts\" --source-maps",
+    "build": "rimraf dist lib && tsc -p tsconfig.output.json && babel src -d lib --extensions \".ts\" --source-maps",
     "lint": "tsc",
     "test": "jest"
   },
