@@ -62,5 +62,6 @@
   "bugs": {
     "url": "https://github.com/GrowflowTeam/update-dotenv/issues"
   },
-  "homepage": "https://github.com/GrowflowTeam/update-dotenv#readme"
+  "homepage": "https://github.com/GrowflowTeam/update-dotenv#readme",
+  "engines" : { "node" : ">=14" }
 }
