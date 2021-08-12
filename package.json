@@ -46,8 +46,7 @@
   },
   "scripts": {
     "build": "rimraf dist es lib && tsc -p tsconfig.output.json --noEmit false --emitDeclarationOnly && cross-env BABEL_ENV=es babel src -d es --extensions \".ts\" --source-maps && cross-env BABEL_ENV=node babel src -d lib --extensions \".ts\" --source-maps",
-    "publish": "yarn publish --non-interactive || exit 0",
-    "lint": "tsc && eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint": "tsc",
     "test": "jest"
   },
   "repository": {

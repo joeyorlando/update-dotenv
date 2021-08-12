@@ -22,3 +22,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Type Check
+        run: npm run lint
