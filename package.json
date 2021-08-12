@@ -1,7 +1,7 @@
 {
   "name": "@growflow/update-dotenv",
   "prettier": "@growflow/prettier-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -16,13 +16,6 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-decorators": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
-    "@babel/plugin-transform-object-assign": "^7.8.3",
-    "@babel/plugin-transform-react-constant-elements": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/runtime": "^7.9.2",
