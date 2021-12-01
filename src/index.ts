@@ -6,7 +6,7 @@ const escape = (str: string) => {
   let result = str.replace(/\n/g, '\\n');
 
   if (result.includes(' ') || result.includes('\t')) {
-    result = `"${result.replace('"', '\\"')}"`;
+    result = `"${result.replace(/"/g, '\\"')}"`;
   }
 
   return result;
