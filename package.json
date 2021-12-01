@@ -1,7 +1,7 @@
 {
   "name": "@growflow/update-dotenv",
   "prettier": "@growflow/prettier-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -53,5 +53,7 @@
     "url": "https://github.com/GrowflowTeam/update-dotenv/issues"
   },
   "homepage": "https://github.com/GrowflowTeam/update-dotenv#readme",
-  "engines" : { "node" : ">=14" }
+  "engines": {
+    "node": ">=14"
+  }
 }
