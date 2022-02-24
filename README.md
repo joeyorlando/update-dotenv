@@ -5,13 +5,13 @@
 ## Installation
 
 ```
-yarn add dotenv @growflow/update-dotenv
+yarn add dotenv @can-courier/update-dotenv
 ```
 
 ## Usage
 
 ```js
-const updateDotenv = require('@growflow/update-dotenv')
+const updateDotenv = require('@can-courier/update-dotenv')
 
 updateDotenv({
   MY_VARIABLE: 'new value'

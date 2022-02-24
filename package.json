@@ -1,6 +1,5 @@
 {
-  "name": "@growflow/update-dotenv",
-  "prettier": "@growflow/prettier-config",
+  "name": "@can-courier/update-dotenv",
   "version": "1.0.4",
   "main": "lib/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +18,6 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/runtime": "^7.9.2",
-    "@growflow/prettier-config": "^6.0.0",
     "@types/jest": "^27.0.0",
     "babel-jest": "^26.1.0",
     "babel-plugin-import": "^1.13.0",
@@ -42,17 +40,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GrowflowTeam/update-dotenv.git"
+    "url": "git+https://github.com/joeyorlando/update-dotenv.git"
   },
   "keywords": [
     "dotenv"
   ],
-  "author": "Brandon Keepers <bkeepers@github.com>",
+  "author": "Joey Orlando <joseph.t.orlando@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GrowflowTeam/update-dotenv/issues"
+    "url": "https://github.com/joeyorlando/update-dotenv/issues"
   },
-  "homepage": "https://github.com/GrowflowTeam/update-dotenv#readme",
+  "homepage": "https://github.com/joeyorlando/update-dotenv#readme",
   "engines": {
     "node": ">=14"
   }
